@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let name = 'Nicholas';
+    let age = 36;
+</script>
+<script>
+    if (typeof name != 'undefined') {
+        let name;
+        name = 'hello';
+        console.log(name);
+    }
+    console.log('1--.' + name);
+    name = 'Matt';
+    console.log(name);
+    try {
+        console.log(age);
+    } catch (error) {
+        let age; // 在代码块中声明的变量是局部变量
+    }
+    console.log('1-->' + age);
+    age = 26;
+    console.log('2-->' + age);
+</script>
+</html>
