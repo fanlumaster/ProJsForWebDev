@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let dest, src, result;
+  dest = {};
+  src = {id: 'src'};
+  result = Object.assign(dest, src);
+  console.log(dest === result);
+  console.log(dest !== src);
+  console.log(result);
+  console.log(dest);
+
+  dest = {};
+  result = Object.assign(dest, {a: 'foo'}, {b: 'bar'});
+  console.log(result);
+
+  dest = {
+      set a(val) {
+          console.log(`Invoked dest setter with param ${val}`);
+      }
+  };
+  src = {
+      get a() {
+          console.log('Invoked src getter');
+          return 'foo';
+      }
+  };
+  console.log("============");
+  Object.assign(dest, src);
+  console.log(dest);
+  /**
+   *
+   */
+</script>
+</body>
+</html>

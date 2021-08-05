@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 早期的创建新对象的方式
+  let person = new Object();
+  person.name = 'Nicholas';
+  person.age = 29;
+  person.job = 'Software Engineer';
+  person.sayName = function () {
+      console.log(this.name);
+  };
+</script>
+</body>
+</html>
