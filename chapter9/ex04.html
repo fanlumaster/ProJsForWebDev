@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>trap</title>
+</head>
+<body>
+<script>
+  const target = {
+    foo: 'bar'
+  };
+
+  const handler = {
+    get(trapTarget, property, receiver) {
+      return trapTarget[property];
+    }
+  };
+
+  const proxy = new Proxy(target, handler);
+
+  console.log(proxy.foo);
+  console.log(target.foo);
+</script>
+</body>
+</html>

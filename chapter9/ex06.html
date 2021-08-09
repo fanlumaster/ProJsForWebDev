@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>reflect</title>
+</head>
+<body>
+<script>
+  const target = {
+    foo: 'bar'
+  };
+
+  const handler = {
+    get: Reflect.get
+  };
+
+  const proxy = new Proxy(target, handler);
+
+  console.log(proxy.foo);
+  console.log(target.foo);
+</script>
+</body>
+</html>

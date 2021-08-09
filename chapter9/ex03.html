@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>trap</title>
+</head>
+<body>
+<script>
+  const target = {
+    foo: 'bar'
+  };
+
+  const handler = {
+    get(trapTarget, property, receiver) {
+      console.log(trapTarget === target);
+      console.log(property);
+      console.log(receiver === proxy);
+    }
+  };
+
+  const proxy = new Proxy(target, handler);
+
+  proxy.foo; // 测试 handler 中 get 方法的接收的参数
+</script>
+</body>
+</html>
